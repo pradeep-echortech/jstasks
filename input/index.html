@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <style>
+        *{
+            text-align: justify;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px 5px;
+        }
+        form{
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1 style="text-align: center;font-size: 30px;">Login Form</h1>
+        <label for="firstname">Firstname :</label>
+        <input type="text" name="firstname" placeholder="Firstname Here"><br>
+        <label for="lastname">Lastname :</label>
+        <input type="text" name="lastname" placeholder="Lastname Here"><br>
+        <label for="phoneno">Phone Number :</label>
+        <input type="tel" name="phoneno" placeholder="Phone Number Here"><br>
+        <label for="emailid">EmailId :</label>
+        <input type="email" name="emailid" placeholder="EmailId Here"><br>
+        <label for="grp">Gender :</label>
+        <input id="rb1" name="grp" type="radio" value="male">Male</input>
+        <input id="rb2" name="grp" type="radio" value="female">Female</input><br>
+        <label for="state">State :</label>
+        <select name="state">
+            <option>Telangana</option>
+            <option>Andhra pradesh</option>
+            <option>Others</option>
+        </select><br><br>
+        <input type="checkbox" name="check">
+        <label for="check">I agree to the Terms and Conditions.. </label><br>
+        <button type="submit">Submit</button>
+    </form>
+<script src="/input/script.js"></script>
+</body>
+</html>
