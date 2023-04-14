@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener</title>
+    <style>
+        #btn,
+        #btn2 {
+            background-color: royalblue;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 15px;
+        }
+
+        form {
+            margin: 50px;
+            font-size: 28px;
+        }
+
+        input {
+            font-size: 23px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Listener</h1>
+    <button id="btn" type="submit" onclick="rem()">click here</button>
+    <button id="btn2" type="submit" onclick="rem()" onmousedown="mDown(this)" onmouseup="mUp(this)">remove</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <div id="div1">
+        <p id="p1">This is first paragraph</p>
+        <p id="p2">This is second paragraph</p>
+    </div>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <form name="myform" onsubmit="return validation()">
+        <label for="fname">Name:</label>
+        <input name="fname" type="text"><br>
+        <label for="num">Choose 1 to 10:</label>
+        <input type="text" id="num" required>
+        <p id="p11"></p>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        // forms
+        function validation() {
+            let x = document.forms['myform']['fname'].value;
+            if (x == '') {
+                alert('Fill the details completely');
+                // return false
+            }
+            let y = document.getElementById('num').value;
+            if (isNaN(y) || y < 1 || y > 10) {
+                text = 'Invalid input'
+            }
+            else {
+                text = 'valid input'
+            }
+            document.getElementById('p11').innerHTML = text;
+        }
+        // Nodes
+        let para = document.createElement('p');
+        let node = document.createTextNode('This paragraph is appended');
+        para.appendChild(node);
+        let element = document.getElementById('div1');
+        element.insertBefore(para, document.getElementById('p2'));
+
+        // Collections
+        let collections = document.getElementsByTagName('p');
+        collections[1].style.backgroundColor = "yellow";
+        document.getElementById('demo2').innerHTML = `This document has ${collections.length} paragraphs.`;
+        for (let i = 0; i < collections.length; i++) {
+            collections[i].style.color = 'green';
+
+        }
+
+        // window
+        document.getElementById('demo3').innerHTML = `Browser windows height :${window.innerHeight} and 
+        width :${window.innerWidth} and screen height is ${screen.height} and avail height is ${screen.availHeight}`
+
+
+
+        // Event Handlers
+        let x = document.getElementById('btn')
+        x.addEventListener('mouseover', function mOver() {
+            document.getElementById('demo').innerHTML += 'on mouse<br>'
+        });
+        x.addEventListener('mouseout', function mOut() {
+            document.getElementById('demo').innerHTML += 'mouse out<br>'
+        });
+        x.addEventListener('click', function mClick() {
+            document.getElementById('demo').innerHTML += 'Clicked<br>'
+        });
+        document.getElementById('btn').addEventListener('mousemove', mMove)
+        function mMove() {
+            document.getElementById('demo1').innerHTML = Math.random()
+        };
+        function rem() {
+            document.getElementById('btn').removeEventListener('mousemove', mMove)
+        };
+
+        function mDown(obj) {
+            obj.style.backgroundColor = 'red';
+        }
+        function mUp(obj) {
+            obj.style.backgroundColor = 'black';
+        }
+
+    </script>
+</body>
+
+</html>
