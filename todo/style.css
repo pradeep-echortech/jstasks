@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 50%;
+    margin: 100px auto;
+    font-family: sans-serif;
+    background-color: mediumslateblue;
+    color: white;
+}
+
+#inputfield{
+    height: 40px;
+    width: 325px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+#addtodo{
+    height: 42px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: yellow;
+    font-weight: bold;
+    /* color: white; */
+}
+
+.to-dos{
+    margin-top: 30px;
+}

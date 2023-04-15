@@ -40,6 +40,10 @@ setInterval(()=>{
     document.getElementById('date').innerHTML=today.toLocaleTimeString()
 },1000)
 
+let key = prompt('Enter the key you want to set ')
+let value = prompt('Enter the value you want to set')
+localStorage.setItem(key,value);
+console.log(`the value of ${key} is ${localStorage.getItem(key)}`);
     // let que = document.querySelectorAll(`button[class]`)
     // console.log(que);
 
