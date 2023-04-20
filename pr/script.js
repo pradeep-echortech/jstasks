@@ -1,103 +1,128 @@
 var state = []
 const n = 3
-
 var nextUser = 'o'
 
-function populateState() {
-    for (let i = 0; i < n; i++) {
-        let newArr = []
-        for (let j = 0; j < n; j++) {
-            newArr.push(null);
-        }
-        state.push(newArr)
-    }
-    console.log(state)
+function resetState() {
+	state = []
+	for (let i = 0; i < n; i++) {
+		let newArr = []
+		for (let j = 0; j < n; j++) {
+			newArr.push(null);
+		}
+		state.push(newArr)
+	}
+	console.log(state)
 }
-populateState()
+resetState()
 
-function isBoardchecked() {
-    
-	// Declare variables to count the presence of the mark
-	var horizontal_count,
-		vertical_count,
-		right_to_left_count = 0,
-		left_to_right_count = 0;
+function isBoardSolved() {
+	for (let i = 0; i < n; i++) {
 
-
-	// Loop 1
-	for(var i = 0; i < n; i++) {
-
-		// Empty the count
-		horizontal_count = vertical_count = 0;
-
-		// Loop 2
-		for(var j = 0; j < n; j++) {
-
-			// i * n + j ===> "0,1,2", "3,4,5", "6,7,8"
-			if(this.columns[i * n + j].innerHTML == mark) {
-				horizontal_count++;
+		//checking if row values are equal
+		let isRowEqual = true
+		const row = state[i]
+		for (let j = 0; j < n - 1; j++) {
+			if (row[j] == null) {
+				isRowEqual = false
+				break
 			}
-
-			// j * n + i ===> "0,3,6", "1,4,7", "2,5,8"
-			if(this.columns[j * n + i].innerHTML == mark) {
-				vertical_count++;
+			if (row[j] != row[j + 1]) {
+				isRowEqual = false
+				break
 			}
-
+		}
+		if (isRowEqual) {
+			console.log(i, 'row wins');
+			return true
 		}
 
-		// If horizontal or vertical combination is found the return true
-		if(horizontal_count == n || vertical_count == n) {
-			return true;	
+		//checking if column values are equal
+		let isColEqual = true
+		for (let j = 0; j < n - 1; j++) {
+			if (state[i][j] == null) {
+				isColEqual = false
+				break
+			}
+			if (state[j][i] != state[j + 1][i]) {
+				isColEqual = false
+				break
+			}
+		}
+		if (isColEqual) {
+			console.log(i, 'col wins')
+			return true
 		}
 
-		// i * n + i ===> "0,4,8"
-		if(this.columns[i * n + i].innerHTML == mark) {
-			right_to_left_count++;
-		}
-
-		// (n - 1) * (i+1) ===> "2,4,6"
-		if(this.columns[(n - 1) * (i+1)].innerHTML == mark) {
-			left_to_right_count++;
-		}
-
-	} // End of loop
-
-	// If mark is present diagnolly
-	if(right_to_left_count == n || left_to_right_count == n) {
-		return true;	
+		// checking if right diagonal are equal
+		// let isRightDiagonal = true
+		// for (let j = 0; j < n; j++) {
+		// 	if (row[j] == null) {
+		// 		isRightDiagonal = false
+		// 		break
+		// 	}
+		// 	if (state[i] !== nextUser)  {
+		// 		isRightDiagonal = false
+		// 		break
+		// 	}
+			
+		// 	if (isRightDiagonal) {
+		// 		console.log(i,j, 'RDiagnol win');
+		// 		return true
+		// 	}
+		// }
 	}
 
-	return false;   
+	for (i = 0; i < n; i++) {
 
-
-    // return true || false
+		let isRightDiagonal = true
+		for (let j = 0; j < n; j++) {
+			if (state[i][j] == null) {
+				isRightDiagonal = false
+				break
+			}
+			if (state[i][j] == state[i + 1][j + 1]) {
+				isRightDiagonal = true
+				console.log(i,j);
+				break 
+			}
+		}
+		if(isRightDiagonal){
+			console.log(i, 'RDiagnol win');
+			return true
+		}
+	}
 }
 
 function renderBoardFromState() {
-    var gridbox = document.querySelector('#gridbox');
-    gridbox.innerHTML = '';
-    for (let i = 0; i < n; i++) {
-        var newDiv = document.createElement('tr');
-        for (let j = 0; j < n; j++) {
-            let childrrs = document.createElement('td')
-            childrrs.id = 'textbox'
-            childrrs.innerText = state[i][j]
-            newDiv.append(childrrs)
-            childrrs.addEventListener('click', () => updatePosition(i, j))
-        }
-        gridbox.append(newDiv)
-    }
+	var gridbox = document.querySelector('#gridbox');
+	gridbox.innerHTML = '';
+
+	for (let i = 0; i < n; i++) {
+		var newDiv = document.createElement('tr');
+		for (let j = 0; j < n; j++) {
+			let child = document.createElement('td')
+			child.id = 'textbox'
+			child.innerText = state[i][j]
+			newDiv.append(child)
+			child.addEventListener('click', () => updatePosition(i, j))
+		}
+		gridbox.append(newDiv)
+	}
+	// isBoardchecked();
 }
 //renderBoardFromState()
 
 function updatePosition(row, col) {
-    state[row][col] = nextUser
-    if (isBoardchecked()) {
-        alert(`${nextUser} Wins the game`)
-        populateState()
-        renderBoardFromState()
-    }
-    nextUser = nextUser == 'o' ? 'x' : 'o'
-    // renderBoardFromState()
-
+	if (state[row][col]) {
+		return alert('already marked')
+	}
+	state[row][col] = nextUser
+	renderBoardFromState()
+	if (isBoardSolved()) {
+		alert(`${nextUser} Wins the game`)
+		resetState()
+		renderBoardFromState()
+		return
+	}
+	nextUser = nextUser == 'o' ? 'x' : 'o'
 }
