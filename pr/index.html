@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        h1{
+            text-align: center;
+            font-size: 70px;
+        }
+        
+        button{
+            text-align: center;
+            display: flex;
+            margin: 0% auto;
+            font-size: 20px;
+            padding: 10px;
+            background-color: black;
+            border-radius: 15px;
+            color: white;
+        }
         #textbox{
             border: 2px solid black;
             height: 100px;
@@ -15,18 +30,21 @@
         #gridbox{
             justify-content: center;
             border-spacing: 0px;
-            margin: 10% auto;
+            margin: 5% auto;
 
         }
         td{
             font-size: 90px;
+            background-color: cadetblue;
         }
     </style>
 </head>
 <body onload="renderBoardFromState()">
+    <h1><u>Tic-Tac-Toe</u></h1>
     <table id="gridbox">
 
     </table>
+    <button type="submit" onclick="refresh()">RESET</button>
     <script src="script.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ var nextUser = 'o'
 
 function resetState() {
 	state = []
+	nextUser = 'o'
 	for (let i = 0; i < n; i++) {
 		let newArr = []
 		for (let j = 0; j < n; j++) {
@@ -39,7 +40,8 @@ function isBoardSolved() {
 		//checking if column values are equal
 		let isColEqual = true
 		for (let j = 0; j < n - 1; j++) {
-			if (state[i][j] == null) {
+			// console.log(`i=${i},j=${j}, ->${state[j][i]} ${state[j + 1][i]}`)
+			if (state[j][i] == null) {
 				isColEqual = false
 				break
 			}
@@ -52,44 +54,40 @@ function isBoardSolved() {
 			console.log(i, 'col wins')
 			return true
 		}
-
-		// checking if right diagonal are equal
-		// let isRightDiagonal = true
-		// for (let j = 0; j < n; j++) {
-		// 	if (row[j] == null) {
-		// 		isRightDiagonal = false
-		// 		break
-		// 	}
-		// 	if (state[i] !== nextUser)  {
-		// 		isRightDiagonal = false
-		// 		break
-		// 	}
-			
-		// 	if (isRightDiagonal) {
-		// 		console.log(i,j, 'RDiagnol win');
-		// 		return true
-		// 	}
-		// }
 	}
-
-	for (i = 0; i < n; i++) {
-
-		let isRightDiagonal = true
-		for (let j = 0; j < n; j++) {
-			if (state[i][j] == null) {
-				isRightDiagonal = false
-				break
-			}
-			if (state[i][j] == state[i + 1][j + 1]) {
-				isRightDiagonal = true
-				console.log(i,j);
-				break 
-			}
+	
+	//diagnol 1
+	let diagnol1 = true
+	for (i = 0; i < n - 1; i++) {
+		// if(state[i][i] == null){
+		// 	diagnol1 = false
+		// 	break
+		// }
+		if (state[i][i] !== state[i + 1][i + 1] || state[i][i] === null) {
+			diagnol1 = false
+			break
 		}
-		if(isRightDiagonal){
-			console.log(i, 'RDiagnol win');
-			return true
+	}
+	if (diagnol1) {
+		console.log(i, 'diagonal 1 wins')
+		return true
+	}
+	
+	// diagnol 2
+	let diagnol2 = true
+	for (i = 0; i < n - 1; i++) {
+		// if(state[i][n-i-1] == null){
+		// 	diagnol1 = false
+		// 	break
+		// }
+		if (state[i][n-i-1] !== state[i+1][n-i-2] || state[i][n-i-1] === null) {
+			diagnol2 = false
+			break
 		}
+	}
+	if (diagnol2) {
+		console.log(i, 'diagonal 2 wins')
+		return true
 	}
 }
 
@@ -125,4 +123,8 @@ function updatePosition(row, col) {
 		return
 	}
 	nextUser = nextUser == 'o' ? 'x' : 'o'
+}
+
+function refresh() {
+	window.location.reload();
 }
