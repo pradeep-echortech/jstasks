@@ -2,493 +2,496 @@
 
 function s1(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-     str+='*'
-     console.log(str);
-}
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += '*'
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // 2
 
 function s2(num) {
-    let n = num 
-str =''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n-i; j++) {
-        str+='*'
-    }    
-    str+='\n'
-}
-return str
+    let n = num
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n - i; j++) {
+            str += '*'
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // 3
 
 function s3(num) {
-    let n = num 
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '        
+    let n = num
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < i; j++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let j = 0; j < i; j++) {
-        str+='*'
-    }    
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 4
 
 function s4(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        str += ' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < n - i; j++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let j = 0; j < n-i; j++) {
-        str += '*'
-    }
-    str += '\n'
-}
-return str
+    return str
 }
 
 // 5
 
 function s5(num) {
-    let n=num
-str=''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < n-i; j++) {
-        str+=' '        
-    }    
-    for (let k = 0; k < i; k++) {
-         str+='*'
-         if(k==i-1){
-            break
-         }else{
-            str+=' '
-         }
+    let n = num
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < n - i; j++) {
+            str += ' '
+        }
+        for (let k = 0; k < i; k++) {
+            str += '*'
+            if (k == i - 1) {
+                break
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 6
 
 function s6(num) {
     let n = num
-str=''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < i; j++) {
-      str+=' '
-    } 
-    for (let k = 0; k < n-i; k++) {
-        str+='*'
-        if(k==n-i-1){
-            break
-        }else{
-            str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += ' '
         }
-    }   
-    str+='\n'
-}
-return str
+        for (let k = 0; k < n - i; k++) {
+            str += '*'
+            if (k == n - i - 1) {
+                break
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // 7 
 
 function s7(num) {
-    let n = num 
-str =''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        str+='*'
-    }    
-    str+='\n'
-}
-return str
+    let n = num
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            str += '*'
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // 8
 
 function s8(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        str += '*'
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    str += '\n'
-}
-for (let i = 0; i < n; i++) {
-    for (let j = 1; j < n - i; j++) {
-        str += '*'
+    for (let i = 0; i < n; i++) {
+        for (let j = 1; j < n - i; j++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    str += '\n'
-}
-return str
+    return str
 }
 
 // 9 
 
 function s9(num) {
-    
-let n = 5
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n-i; j++) {
-        str+=' '
-    }
-    for (let k = 0; k < i; k++) {
-        str+='*'
-        if(k==i-1){
-            break
-        }else{
-            str+=' '
+
+    let n = 5
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n - i; j++) {
+            str += ' '
         }
-    }
-    str+='\n'
-}
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < i; j++) {
-        str += ' '
-    }
-    for (let k = 0; k < n - i; k++) {
-        str += '*'
-        if(k==n-i-1){
-            break
-        }else{
-            str+=' '
+        for (let k = 0; k < i; k++) {
+            str += '*'
+            if (k == i - 1) {
+                break
+            } else {
+                str += ' '
+            }
         }
+        str += '\n'
     }
-    str += '\n'
-}
-return str
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += ' '
+        }
+        for (let k = 0; k < n - i; k++) {
+            str += '*'
+            if (k == n - i - 1) {
+                break
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // 10
 
 function s10(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < 2*i-1; j++) {
-        if(j===0 || j=== 2*i-2){
-            str+='*'
-        }else{
-            str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
         }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            if (j === 0 || j === 2 * i - 2) {
+                str += '*'
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 11
 
 function s11(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let j = 0; j < 2*i-1; j++) {
-        str+='*'
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 //12
 
 function s12(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < 2 * (n - i) - 1; j++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let j = 0; j < 2*(n-i)-1; j++) {
-        str+='*'
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 13
 
 function s13(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < i; j++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let j = 0; j < i; j++) {
-        str+='*'
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += ' '
+        }
+        for (let j = 0; j < n - i; j++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-for (let i = 1; i < n; i++) {
-    for (let j = 0; j < i; j++) {
-        str += ' '
-    }
-    for (let j = 0; j < n-i; j++) {
-        str += '*'
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 14
 
 function s14(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < 2*(n-i)-1; j++) {
-        if(j===0 || j===2*(n-i)-2){
-            str+='*'
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            str += ' '
         }
-        else{
-            str+=' '
+        for (let j = 0; j < 2 * (n - i) - 1; j++) {
+            if (j === 0 || j === 2 * (n - i) - 2) {
+                str += '*'
+            }
+            else {
+                str += ' '
+            }
         }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 15
 
 function s15(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < 2*i-1; j++) {
-        if(j==0 || j==2*i-2){
-            str+='*'
-        }else{
-            str+= ' '
-        }
-    }
-    str+='\n'
-}
-for (let i = 1; i < n; i++) {
-    for (let j = 0; j < i; j++) {
-        str += ' '
-    }
-    for (let j = 0; j <= 2*(n-i)-1; j++) {
-        if(j==0 || j==2*(n-i)-2){
-            str += '*'
-        }else{
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
             str += ' '
         }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            if (j == 0 || j == 2 * i - 2) {
+                str += '*'
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += ' '
+        }
+        for (let j = 0; j <= 2 * (n - i) - 1; j++) {
+            if (j == 0 || j == 2 * (n - i) - 2) {
+                str += '*'
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // 16
 
 function s16(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+='*'
-    }
-    for (let j = 0; j < 2*i-1; j++) {
-        str+=' '
-    }
-    for (let k = 0; k < n-i; k++) {
-        if(k==n-1){
-            break
-        }else{
-            str+= '*'
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += '*'
         }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            str += ' '
+        }
+        for (let k = 0; k < n - i; k++) {
+            if (k == n - 1) {
+                break
+            } else {
+                str += '*'
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 17
 
 function s17(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        if(k==n-1){
-            break
-        }else{
-            str+='*'
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            if (k == n - 1) {
+                break
+            } else {
+                str += '*'
+            }
         }
+        for (let j = 1; j <= 2 * (n - i) - 1; j++) {
+            str += ' '
+        }
+        for (let l = 0; l < i; l++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let j = 1; j <= 2*(n-i)-1; j++) {
-        str+=' '
-    }
-    for (let l = 0; l < i; l++) {
-        str+= '*'
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 18
 
 function s18(num) {
     let n = num
-str =''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n-i; j++) {
-        str+='*'
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n - i; j++) {
+            str += '*'
+        }
+        for (let k = 0; k < i; k++) {
+            str += ' '
+        }
+        str += '\n'
     }
-    for (let k = 0; k < i; k++) {
-        str+= ' '
+    for (let i = 1; i < n; i++) {
+        for (let l = 0; l < i + 1; l++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-for (let i = 1; i < n; i++) {
-    for (let l = 0; l < i+1; l++) {
-        str+='*'
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 19
 
 function s19(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let k = 0; k < i; k++) {
-        str += ' '
-    }
-    for (let j = 0; j < 2 * (n - i) - 1; j++) {
-        if(j==0 || j==2*(n-i)-2){
-            str += '*'
-        }else{
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let k = 0; k < i; k++) {
             str += ' '
         }
-    }
-    str += '\n'
-}
-for (i = 2; i <= n; i++) {
-    for (let k = 0; k < n - i; k++) {
-        str += ' '
-    }
-    for (let j = 0; j < 2 * i - 1; j++) {
-        if(j==0 || j==2*i-2){
-            str += '*'
-        }else{
-            str+= ' '
+        for (let j = 0; j < 2 * (n - i) - 1; j++) {
+            if (j == 0 || j == 2 * (n - i) - 2) {
+                str += '*'
+            } else {
+                str += ' '
+            }
         }
+        str += '\n'
     }
-    str += '\n'
-}
-return str
+    for (i = 2; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            if (j == 0 || j == 2 * i - 2) {
+                str += '*'
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
+    }
+    return str
 }
 
 
 // 20
 
 function s20(num) {
-    
-let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < i; j++) {
-        if(i==0 || j==0 || i==n || j==i-1){
-            str+='*'
+
+    let n = num
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < i; j++) {
+            if (i == 0 || j == 0 || i == n || j == i - 1) {
+                str += '*'
+            }
+            else {
+                str += ' '
+            }
         }
-        else{
-            str+=' '
-        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 21
 
 function s21(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < n; j++) {
-        if(i==0 || j==0 || i==n || j==n-1){
-            str+='*'
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < n; j++) {
+            if (i == 0 || j == 0 || i == n || j == n - 1) {
+                str += '*'
+            }
+            else {
+                str += ' '
+            }
         }
-        else{
-            str+=' '
-        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // 22
 
 function s22(num) {
     let n = num
-str =''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < i; j++) {
-        if(j==n-2){
-            break
-        }else{
-            str+='*'
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            if (j == n - 2) {
+                break
+            } else {
+                str += '*'
+            }
         }
+        for (let k = 2; k < 2 * (n - i) - 1; k++) {
+            str += ' '
+        }
+        for (let l = 0; l < i; l++) {
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let k = 2; k < 2*(n-i)-1; k++) {
-        str+= ' '
+    for (let i = 2; i < n; i++) {
+        for (let l = 0; l < n - i; l++) {
+            str += '*'
+        }
+        for (let j = 2; j < 2 * i - 1; j++) {
+            str += ' '
+        }
+        for (let k = 0; k < n - i; k++) {
+
+            str += '*'
+        }
+        str += '\n'
     }
-    for (let l = 0; l < i; l++) {
-        str+='*'
-    }
-    str+='\n'
-}
-for (let i = 2; i < n; i++) {
-    for (let l = 0; l < n-i; l++) {
-        str+='*'
-    }
-    for (let j = 2; j < 2*i-1; j++) {
-        str+=' '
-    }
-    for (let k = 0; k < n-i; k++) {
-        
-        str+='*'
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 
@@ -496,498 +499,498 @@ return str
 
 function n1(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        str+= i+1
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            str += i + 1
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N2
 
 function n2(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        str+= j+1
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            str += j + 1
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N3
 
 function n3(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        str+= n-i
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            str += n - i
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N4
 
 function n4(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        str+= n-j
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            str += n - j
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N5
 
 function n5(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < i; j++) {
-        str+= i
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += i
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N6
 
 function n6(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < i; j++) {
-        str+= j+1
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += j + 1
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N7
 
 function n7(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < n-i; j++) {
-        str+= i+1
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < n - i; j++) {
+            str += i + 1
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N8
 
 function n8(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < n - i; j++) {
+            str += j + 1
+        }
+        str += '\n'
     }
-    for (let j = 0; j < n-i; j++) {
-        str+= j+1
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N9
 
 function n9(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            str += i
+        }
+        str += '\n'
     }
-    for (let j = 0; j < 2*i-1; j++) {
-        str+= i
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N10
 
 function n10(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            str += 2 * i - 1
+        }
+        str += '\n'
     }
-    for (let j = 0; j < 2*i-1; j++) {
-        str+= 2*i-1
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N11
 
 function n11(num) {
-    
-let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
+
+    let n = num
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            str += j + 1
+        }
+        str += '\n'
     }
-    for (let j = 0; j < 2*i-1; j++) {
-        str+= j+1
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N12
 
 function n12(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 2 * i - 1; j > 0; j--) {
+            str += j
+        }
+        str += '\n'
     }
-    for (let j = 2*i-1; j > 0 ; j--) {
-        str+= j
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N13
 
 function n13(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < i; j++) {
-        str+=i
-        if(j==i-1){
-            break
-        }else{
-            str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
         }
+        for (let j = 0; j < i; j++) {
+            str += i
+            if (j == i - 1) {
+                break
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N14
 
 function n14(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < n-i; j++) {
-        str+= n-i
-        if(j==n-i-1){
-            break
-        }else{
-            str +=' ';
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            str += ' '
         }
+        for (let j = 0; j < n - i; j++) {
+            str += n - i
+            if (j == n - i - 1) {
+                break
+            } else {
+                str += ' ';
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N15
 
 function n15(num) {
-    
-let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < i; j++) {
-        str+=i
-        if(j==i-1){
-            break
-        }else{
-            str+=' '
+
+    let n = num
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
         }
-    }
-    str+='\n'
-}
-for (let i = 1; i < n; i++) {
-    for (let j = 0; j < i; j++) {
-        str+=' '        
-    }    
-    for (let k = 0; k < n-i; k++) {
-        str+= n-i 
-        if(k==n-i-1){
-            break
-        }else{
-            str+=' '
+        for (let j = 0; j < i; j++) {
+            str += i
+            if (j == i - 1) {
+                break
+            } else {
+                str += ' '
+            }
         }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += ' '
+        }
+        for (let k = 0; k < n - i; k++) {
+            str += n - i
+            if (k == n - i - 1) {
+                break
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // N16
 
 function n16(num) {
-    
-let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < 2*i-1; j++) {
-        if(j==0 || j==2*i-2){
-            str+= i
-        }else{
-            str+= ' '
+
+    let n = num
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
         }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            if (j == 0 || j == 2 * i - 2) {
+                str += i
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N17
 
 function n17(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < 2*(n-i)-1; j++) {
-        if(j==0 || j==2*(n-i)-2){
-            str+= n-i
-        }else{
-            str+= ' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < i; k++) {
+            str += ' '
         }
+        for (let j = 0; j < 2 * (n - i) - 1; j++) {
+            if (j == 0 || j == 2 * (n - i) - 2) {
+                str += n - i
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N18
 
 function n18(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j <= i ; j++) {
-        str+= n-j
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j <= i; j++) {
+            str += n - j
 
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-for (let i = 0; i < n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+= n-k
+    for (let i = 0; i < n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += n - k
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N19
 
 function n19(num) {
     let n = num
-str = ''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = i; j >= 0; j--) {
+            str += n - j
+        }
+        str += '\n'
     }
-    for (let j= i; j >= 0 ; j--) {
-        str+= n-j
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j <= i; j++) {
+            str += ' '
+        }
+        for (let k = n - i; k > 0; k--) {
+            str += n - k + 1
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j <= i; j++) {
-        str+=' '
-    }
-    for (let k = n-i; k > 0 ; k--) {
-        str+= n-k+1
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N20
 
 function n20(num) {
     let n = num
-str =''
-for (let i = 0; i <= n; i++) {
-    for (let k = 0; k < n-i; k++) {
-        str+=' '
-    }
-    for (let j = 0; j < 2*i-1; j++) {
-        if(j==0 || j==2*i-2){
-            str+= i
-        }else{
-            str+= ' '
-        }
-    }
-    str+='\n'
-}
-for (let i = 1; i < n; i++) {
-    for (let j = 0; j < i; j++) {
-        str += ' '
-    }
-    for (let j = 0; j <= 2*(n-i)-1; j++) {
-        if(j==0 || j==2*(n-i)-2){
-            str += n-i
-        }else{
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
             str += ' '
         }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            if (j == 0 || j == 2 * i - 2) {
+                str += i
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            str += ' '
+        }
+        for (let j = 0; j <= 2 * (n - i) - 1; j++) {
+            if (j == 0 || j == 2 * (n - i) - 2) {
+                str += n - i
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // N21
 
 function n21(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let k = 0; k < i; k++) {
-        str += ' '
-    }
-    for (let j = 0; j < 2 * (n - i) - 1; j++) {
-        if(j==0 || j==2*(n-i)-2){
-            str += i+1
-        }else{
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let k = 0; k < i; k++) {
             str += ' '
         }
-    }
-    str += '\n'
-}
-for (i = 2; i <= n; i++) {
-    for (let k = 0; k < n - i; k++) {
-        str += ' '
-    }
-    for (let j = 0; j < 2 * i - 1; j++) {
-        if(j==0 || j==2*i-2){
-            str += n+i
-        }else{
-            str+= ' '
+        for (let j = 0; j < 2 * (n - i) - 1; j++) {
+            if (j == 0 || j == 2 * (n - i) - 2) {
+                str += i + 1
+            } else {
+                str += ' '
+            }
         }
+        str += '\n'
     }
-    str += '\n'
-}
-return str
+    for (i = 2; i <= n; i++) {
+        for (let k = 0; k < n - i; k++) {
+            str += ' '
+        }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            if (j == 0 || j == 2 * i - 2) {
+                str += n-1+i
+            } else {
+                str += ' '
+            }
+        }
+        str += '\n'
+    }
+    return str
 }
 
 // N22
 
 function n22(num) {
     let n = num
-a = 0
-b = 1
-let c;
-let str = ' '
-for (let i = 0; i < n; i++) {
-    for (let k = 0; k < i; k++) {
-        c = a + b
-        str += c + ' ';
-        a = b;
-        b = c;
+    a = 0
+    b = 1
+    let c;
+    let str = ' '
+    for (let i = 0; i < n; i++) {
+        for (let k = 0; k < i; k++) {
+            c = a + b
+            str += c + ' ';
+            a = b;
+            b = c;
 
+        }
+        str += '\n'
     }
-    str += '\n'
-}
-return str
+    return str
 }
 
 // N23
 
 function n23(num) {
     let n = num
-str = ''
-for (let i = 0; i < n; i++) {
-    for (let j = 0; j < i; j++) {
-        if(j==n-2){
-            break
-        }else{
-            str+=j+1
+    str = ''
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            if (j == n - 2) {
+                break
+            } else {
+                str += j + 1
+            }
         }
+        for (let k = 2; k < 2 * (n - i) - 1; k++) {
+            str += ' '
+        }
+        for (let l = i; l > 0; l--) {
+            str += n - l + (n - 2)
+        }
+        str += '\n'
     }
-    for (let k = 2; k < 2*(n-i)-1; k++) {
-        str+=' '
+    for (let i = 1; i < n; i++) {
+        for (let j = 1; j < n - i; j++) {
+            str += j
+        }
+        for (let k = 0; k < 2 * i - 1; k++) {
+            str += ' '
+        }
+        for (let l = n - i - 1; l > 0; l--) {
+            str += n - l + (n - 2)
+        }
+        str += '\n'
     }
-    for (let l = i; l > 0; l--) {
-        str+=n-l+(n-2)
-    }
-    str+='\n'
-}
-for (let i = 1; i < n; i++) {
-    for (let j = 1; j < n-i; j++) {
-        str+=j
-    }
-    for (let k = 0; k < 2*i-1; k++) {
-        str+=' '
-    }
-    for (let l = n-i-1; l > 0; l--) {
-        str+=n-l+(n-2)
-    }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N24
 
 function n24(num) {
     let n = num
-str=''
-for (let i = 0; i <= n; i++) {
-    for (let j = 0; j < i; j++) {
-        if(j==0 || j==i-1 || i==n){
-            str+=i
-        }else{
-            str+=' '
+    str = ''
+    for (let i = 0; i <= n; i++) {
+        for (let j = 0; j < i; j++) {
+            if (j == 0 || j == i - 1 || i == n) {
+                str += i
+            } else {
+                str += ' '
+            }
         }
+        str += '\n'
     }
-    str+='\n'
-}
-return str
+    return str
 }
 
 // N25
@@ -1329,7 +1332,7 @@ function a18(num) {
         for (let j = 0; j < n - i; j++) {
             str += ' '
         }
-        for (let k = i; k > 0 ; k--) {
+        for (let k = i; k > 0; k--) {
             str += String.fromCharCode(n - k + 65)
         }
         str += '\n'
@@ -1338,7 +1341,7 @@ function a18(num) {
         for (let k = 0; k < i; k++) {
             str += ' '
         }
-        for (let j = n-i ; j > 0; j--) {
+        for (let j = n - i; j > 0; j--) {
             str += String.fromCharCode(n - j + 65)
         }
         str += '\n'
@@ -1404,5 +1407,15 @@ function a20(num) {
     return str
 }
 
+// stars printing
+//console.log(s1(5) + s2(5) + s3(5) + '\n' + s4(5) + s5(5) + '\n' + s6(5) + s7(5) + s8(5) + s9(5) + s10(5) + s11(5) + '\n' + s12(5) + s13(5)
+ //   + s14(5) + s15(5) + s16(5) + s17(5) + '\n' + s18(5) + s19(5) + s20(5) + '\n' + s21(5) + s22(5));
 
+// numbers printing
+//console.log(n1(5) + '\n' + n2(5) + '\n' + n3(5) + '\n' + n4(5) + n5(5) + '\n' + n6(5) + '\n' + n7(5) + n8(5) + n9(5) + n10(5) + n11(5) + n12(5) + n13(5) + '\n'
+ //   + n14(5) + n15(5) + n16(5) + n17(5) + '\n' + n18(5) + n19(5) + n20(5) + '\n' + n21(3) + n22(5) + n23(5) + n24(5) + n25(5));
+
+// Alphabets printing
+//console.log(a1(5) + '\n' + a2(5) + '\n' + a3(5) + '\n' + a4(5) + a5(5) + '\n' + a6(5) + '\n' + a7(5) + a8(5) + a9(5) + a10(5) + a11(5) + a12(5) + '\n' + a13(5) + '\n'
+ //   + a14(5) + a15(5) + '\n' + a16(5) + a17(5) + '\n' + a18(5) + a19(5) + a20(5));
 
