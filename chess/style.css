@@ -14,5 +14,21 @@ body{
     height: 500px;
     width: 500px;
     border: 5px solid white;
+}
 
+.piece {
+    height: 61.5px;
+    width: 61.2px;
+    text-align: center;
+}
+
+.piece > img{
+    height: 55px;
+}
+
+.move {
+    position: relative;
+    height: 25px !important;
+    width: 25px;
+    top: 25%;
 }
