@@ -416,7 +416,7 @@ function s19(num) {
     }
     return str
 }
-
+console.log(s19(5));
 
 // 20
 

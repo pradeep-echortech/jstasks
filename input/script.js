@@ -5,4 +5,7 @@ form.addEventListener('submit', (e)=>{
     const fd = new FormData(form);
     let obj = Object.fromEntries(fd);
     console.log(obj);
+
+    const json = JSON.stringify(obj)
+    localStorage.setItem('form', json)
 })

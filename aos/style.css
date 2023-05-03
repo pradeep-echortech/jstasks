@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    padding-top: 75px;
+    background: #fff;
+    text-align: center;
+    color: #000;
+    font-size: 3em;
+}
+body{
+    background-color: #000;
+}

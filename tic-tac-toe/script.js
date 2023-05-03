@@ -26,7 +26,7 @@ function addGo(e) {
     const goDisplay = document.createElement('div')
     goDisplay.classList.add(go)
     e.target.append(goDisplay)
-    go = go === 'circle' ? 'cross' : 'circle'
+    go = go == 'circle' ? 'cross' : 'circle'
     infoDisplay.textContent = `Its ${go}'s Turn`
     e.target.removeEventListener('click', addGo)
     checkScore()

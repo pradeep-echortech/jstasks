@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#tic-tac-toe {
+  border-spacing: 0px;
+  margin: 30px;
+}
+
+#tic-tac-toe td {
+  border: 2px solid #000;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  font: bold 60px comic sans ms;
+}

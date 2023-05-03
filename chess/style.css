@@ -4,9 +4,10 @@
 body{
     display: flex;
     height: 100vh;
-    justify-content: center;
     align-items: center;
     background-color: black;
+    flex-direction: column;
+    caret-color: transparent;
 }
 .board{
     display: flex;
@@ -20,15 +21,41 @@ body{
     height: 61.5px;
     width: 61.2px;
     text-align: center;
+    position: relative;
 }
 
 .piece > img{
     height: 55px;
 }
 
+.playerTurn > h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .move {
-    position: relative;
+    position: absolute;
     height: 25px !important;
-    width: 25px;
-    top: 25%;
+    width: 25px !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.numbers{
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px;
+}
+.num{
+    height: 62px;
+    line-height: 62px;
+    width: 20px;
+}
+.alp{
+    width: 62px;
+    text-align: center;
 }
