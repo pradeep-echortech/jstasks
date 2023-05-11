@@ -166,7 +166,7 @@ $(document).ready(function () {
     //     .then(res => res.json())
     //     .then(console.log)
 
-    fetch('https://dummyjson.com/users')
+    fetch('https://dummyjson.com/users/search?q=terry')
     .then(res => res.json())
     .then(console.log)
 })
