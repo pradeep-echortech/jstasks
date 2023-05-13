@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="onMessage()">
     <h2 style="color: white;"><u>CHESS</u></h2>
     <div style="color: white;" class="playerTurn">
         <h2>white's turn</h2>
@@ -61,6 +61,17 @@
     <input type="text" id="move" maxlength="4">
     <input type="submit" value="submit" onclick="formdata()">
     <script src="script.js"></script>
+    <script src="./websocket.js"></script>
+    <script>
+        function onMessage(){
+            Socket().onmessage = e => {
+                if(e?.status && e?.message)
+                alert(e.message)
+            }
+
+        }
+    </script>
+    
 </body>
 
 </html>

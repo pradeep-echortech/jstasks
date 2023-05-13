@@ -14,13 +14,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <title>Checkout</title>
+    <style>
+        input[type='number'] {
+            width: 40px;
+        }
+        body {
+            background-image: linear-gradient(to top right, rgba(192, 155, 8, 0), rgb(231, 231, 60));
+            background-repeat: no-repeat;
+            background-size: cover;       
+        }
+    </style>
 
 </head>
 
 <body>
-    
+
     <h1 class="ms-5 ps-5 py-5">Checkout <i class="fa-solid fa-cart-shopping"></i></h1>
 
     <table class="table" id="check">
@@ -29,6 +39,8 @@
                 <th scope="col">Product Id</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Product Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody id="c_table_body">
@@ -37,7 +49,6 @@
     <div class="container-fluid d-flex justify-content-center py-2 mb-5 bg-dark text-white">
         <div class="col-lg-10 fw-bold fs-2 d-flex justify-content-end" id="val"></div>
     </div>
-
     <div class="container d-flex justify-content-center flex-column">
         <div class="d-flex flex-wrap container-fluid justify-content-center" id="checkoutdisplay"></div>
     </div>

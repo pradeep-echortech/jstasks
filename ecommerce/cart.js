@@ -1,16 +1,19 @@
 $(document).ready(function () {
+    console.log('bbbjnjnm')
     let items = localStorage.getItem('cart')
     items = JSON.parse(items)
     let tableData = '';
     items.map((values,index) => {
         let pic;
-        pic = values.images.split(",", 1)
+        console.log(values.images)
+        pic = values.images[0]
         tableData += `<div class="card" style="width: 18rem;padding: 5px;margin: 5px;height: fit-content;">
                     <img src="${pic}" class="card-img-top" alt="...">
                     <div class="card-body" style='height: fit-content;'>
                       <h5 class="card-title">${values.title}</h5>
                       <p class="card-text">${values.description}.</p>
                       <p class="card-text">Price : $ ${values.price}.</p>
+                      <p class="card-text">quantity :${values.count}.</p>
                       <a class="btn btn-primary" id="product${values.id}">Buy Now</a>
                       <button class="btn btn-danger ms-4" id="remove${index}">remove</button>
                     </div>

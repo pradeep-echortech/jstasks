@@ -32,13 +32,18 @@ $(document).ready(function () {
                 $('#cardsc').html(tableData)
                 objectData.products.map(values => {
                     $(`#product${values.id}`).click(function () {
-                        addToCart({
-                            id: `${values.id}`,
-                            title: `${values.title}`,
-                            description: `${values.description}`,
-                            price: `${values.price}`,
-                            images: `${values.images}`
-                        })
+                        let find = localStorage.getItem('cart')
+                        find = JSON.parse(find) || []
+                        let index = find?.findIndex(va => va?.id == values?.id)
+                        if (index >= 0) {
+                            find[index].count += 1
+                            localStorage.setItem('cart', JSON.stringify(find))
+                            return
+                        }
+                        localStorage.setItem('cart', JSON.stringify([...find, {
+                            ...values,
+                            count: 1
+                        }]))
                     })
                 })
             })
@@ -77,19 +82,21 @@ $(document).ready(function () {
                       <h5 class="card-title">${values.title}</h5>
                       <p class="card-text">${values.description}.</p>
                       <p class="card-text">Price :${values.price}.</p>
-                      <a class="btn btn-primary" id="product${values.id}">Add To Cart</a>
+                      <a class="btn btn-primary" type="submit" id="product${values.id}">Add To Cart</a>
                     </div>
                   </div>`
                 });
                 $('#cardsc').html(tableData)
                 objectData.products.map(values => {
                     $(`#product${values.id}`).click(function () {
+
                         addToCart({
                             id: `${values.id}`,
                             title: `${values.title}`,
                             description: `${values.description}`,
                             price: `${values.price}`,
-                            images: `${values.images}`
+                            images: `${values.images}`,
+                            count: values?.count ? values.count + 1 : 1
                         })
                     })
                 })
