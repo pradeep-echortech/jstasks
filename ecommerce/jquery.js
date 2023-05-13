@@ -1,39 +1,55 @@
 $(document).ready(function () {
-    $('#allproducts').on('click',function () {
-        fetch('https://fakestoreapi.com/products')
+    function addToCart(values) {
+        let items = localStorage.getItem('cart')
+        if (!items) {
+            values = [values]
+        }
+        else {
+            items = JSON.parse(items)
+            values = [...items, values]
+        }
+        localStorage.setItem('cart', JSON.stringify(values))
+        // console.log(items);
+
+    }
+    window.addToCart = addToCart
+    $('#allproducts').on('click', function () {
+        fetch('https://dummyjson.com/products')
             .then(res => res.json())
             .then((objectData) => {
-                console.log(objectData[0].title);
                 let tableData = '';
-                objectData.map((values) => {
+                objectData.products.map((values) => {
                     tableData += `<div class="card" style="width: 18rem;padding: 5px;margin: 5px;height: fit-content;">
-                    <img src="${values.image}" class="card-img-top" alt="...">
+                    <img src="${values.images[0]}" class="card-img-top" alt="...">
                     <div class="card-body" style='height: fit-content;'>
                       <h5 class="card-title">${values.title}</h5>
                       <p class="card-text">${values.description}.</p>
-                      <p class="card-text">Price :${values.price}.</p>
-                      <a href="#" class="btn btn-primary">Buy Now</a>
+                      <p class="card-text">Price : $ ${values.price}.</p>
+                      <a class="btn btn-primary" id="product${values.id}">Add To Cart</a>
                     </div>
                   </div>`
-                    
-                    
-                //     `<tr>
-                // <td>${values.title}</td>
-                // <td>${values.description}</td>
-                // <td>${values.price}</td>
-                // <td><img src='${values.image}'</td>
-                // </tr>`
                 });
                 $('#cardsc').html(tableData)
+                objectData.products.map(values => {
+                    $(`#product${values.id}`).click(function () {
+                        addToCart({
+                            id: `${values.id}`,
+                            title: `${values.title}`,
+                            description: `${values.description}`,
+                            price: `${values.price}`,
+                            images: `${values.images}`
+                        })
+                    })
+                })
             })
-
-            
-        // fetch('https://fakestoreapi.com/products/search?q=laptop')
-        // .then(res=>res.json())
-        // .then(console.log)
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(console.log)
     })
-    $('#allcategories').on('click',function () {
-        fetch('https://fakestoreapi.com/products/categories')
+
+    // All categories
+    $('#allcategories').on('click', function () {
+        fetch('https://dummyjson.com/products/categories')
             .then(res => res.json())
             .then((objectData) => {
                 console.log(objectData[0].title);
@@ -44,27 +60,39 @@ $(document).ready(function () {
                 </tr>`
                 });
                 $('#c_table_body').html(tableData)
-            }) 
+            })
     })
-    $('#search').on('click',function () {
-        fetch(`https://fakestoreapi.com/products/category/${$('#search_input').val()}`)
-        .then(res => res.json())
-        .then((objectData) => {
-            console.log(objectData[0].title);
-            let tableData = '';
-            objectData.map((values) => {
-                tableData += `<div class="card" style="width: 18rem;padding: 5px;margin: 5px;height: fit-content;">
-                <img src="${values.image}" class="card-img-top" alt="...">
-                <div class="card-body" style='height: fit-content;'>
-                  <h5 class="card-title">${values.title}</h5>
-                  <p class="card-text">${values.description}.</p>
-                  <p class="card-text">Price :${values.price}.</p>
-                  <a href="#" class="btn btn-primary">Buy Now</a>
-                </div>
-              </div>`
-            });
-            $('#cardsc').html(tableData)
-        })
+
+    // search bar
+    $('#search').on('click', function () {
+        fetch(`https://dummyjson.com/products/category/${$('#search_input').val()}`)
+            .then(res => res.json())
+            .then((objectData) => {
+                console.log(objectData.products[0].title);
+                let tableData = '';
+                objectData.products.map((values) => {
+                    tableData += `<div class="card" style="width: 18rem;padding: 5px;margin: 5px;height: fit-content;">
+                    <img src="${values.images[0]}" class="card-img-top" alt="...">
+                    <div class="card-body" style='height: fit-content;'>
+                      <h5 class="card-title">${values.title}</h5>
+                      <p class="card-text">${values.description}.</p>
+                      <p class="card-text">Price :${values.price}.</p>
+                      <a class="btn btn-primary" id="product${values.id}">Add To Cart</a>
+                    </div>
+                  </div>`
+                });
+                $('#cardsc').html(tableData)
+                objectData.products.map(values => {
+                    $(`#product${values.id}`).click(function () {
+                        addToCart({
+                            id: `${values.id}`,
+                            title: `${values.title}`,
+                            description: `${values.description}`,
+                            price: `${values.price}`,
+                            images: `${values.images}`
+                        })
+                    })
+                })
+            })
     })
-    
 })
